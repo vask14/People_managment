@@ -1,0 +1,36 @@
+*{
+    font:16px Verdana;
+}
+form input{
+    display: block;
+    margin-bottom: 2px;
+    padding:2px;
+}
+form {
+    background:lightblue;
+    padding:5px;
+    margin: auto;
+}
+form button {
+    margin-top: 10px;
+}
+table {
+    margin-top: 10px;
+}
+table th,
+table td{
+    padding:3px;
+    background-color: darkturquoise;
+}
+.vish{
+  visibility:hidden;
+}
+.visv{
+  visibility:visible;
+}
+div#form{
+    padding-left: 750px;
+}
+#table{
+    margin-left: 700px;
+}
