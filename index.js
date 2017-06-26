@@ -19,10 +19,24 @@ function User() {
     this.address = '';
     this.phone = '';
     this.email = '';
+    function GetValue() {
+        var vel;
+        var sex1 = document.querySelectorAll('input[name="Sex"')
+        console.log(sex1);
+        for(var i = 0;i < sex1.length;i++)
+        {
+            if(sex1[i].checked) {
+                vel = sex1[i].value;
+                break;
+            }
+        }
+        return vel;
+    }
+   console.log(GetValue());
     this.isValid = function () {
         var UserData = {
             name: that.name,
-            sex: that.sex,
+            sex: GetValue(),
             birth: that.birth,
             address: that.address,
             phone: that.phone,
@@ -79,8 +93,6 @@ User.prototype = new SuperUser();
 function View() {
     var that = this;
     var $table = document.querySelector('table tbody');
-
-
     var $fields = {
         name: document.querySelector('input[name="name"'),
         sex: document.querySelector('input[name="Sex"'),
@@ -89,19 +101,28 @@ function View() {
         phone: document.querySelector('input[name="phone"'),
         email: document.querySelector('input[name="email"')
     }
-
-
    this.bindEvents = function() {
        var $saveButton = document.getElementById('save');
        $saveButton.addEventListener('click',this.onSaveButtonClick);
      };
-
+    function GetValue() {
+        var vel;
+        var sex1 = document.querySelectorAll('input[name="Sex"')
+        for(var i = 0;i < sex1.length;i++)
+        {
+            if(sex1[i].checked) {
+                vel = sex1[i].value;
+                break;
+            }
+        }
+        return vel;
+    }
    
    this.onSaveButtonClick = function(event) {
        event.preventDefault();
        var user = new User();
        user.name = $fields.name.value;
-       user.sex = $fields.sex.value;
+       user.sex = GetValue();
        user.birth = $fields.birth.value;
        user.address = $fields.address.value;
        user.phone = $fields.phone.value;
@@ -114,10 +135,10 @@ function View() {
        that.cleanForm();
        that.render();
    }
-   
+
    this.cleanForm = function () {
        $fields.name.value = '';
-       $fields.sex.value = '';
+       vel = '';
        $fields.birth.value = '';
        $fields.address.value = '';
        $fields.phone.value = '';

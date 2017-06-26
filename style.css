@@ -34,3 +34,10 @@ div#form{
 #table{
     margin-left: 700px;
 }
+input[type = 'radio']{
+    display: inline-block;
+}
+p{
+    font-weight: bold;
+    color: cornflowerblue;
+}
