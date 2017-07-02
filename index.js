@@ -43,7 +43,7 @@ function User() {
             email: that.email
         };
         var RegEx = {
-            name: /^[A-zА-я][^;:#*%S]/,
+            name: /^[a-zA-Z]+$/,
             sex: /Male|Female|Other/,
             birth: /(\d+)(-|\/)(\d+)(?:-|\/)(?:(\d+)\s+(\d+):(\d+)(?::(\d+))?(?:\.(\d+))?)?/,
             address: /^[A-zА-я\d][^;:#*%S]/,
